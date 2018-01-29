@@ -7,7 +7,36 @@ var targets = { table: [], sphere: [], helix: [], grid: [] };
 
 init();
 animate();
-
+let data=[
+  ['初登场_2010.11.28','2348876'],
+  ['Tokyo Idol Festival _2011.8','2628809'],
+  ['15分一本胜负_2012.4','3554891'],
+  ['第二回横丁祭_2012.4','2761394'],
+  ['护颈祭_2012.7','2761269'],
+  ['Legend I_2012.10','2954144'],
+  ['第一次海外演出 in Singapore_2012.11','1958674'],
+  ['Legend D_2012.12','2988294'],
+  ['Legend Z_2013.2','3116433'],
+  ['1999圣诞祭_2013.6','3778604'],
+  ['Summer Sonic Ⅰ_2013.8','4567577'],
+  ['Inazuma Rock Fes_2013.9','1952618'],
+  ['1997圣诞祭_2013.12','3416127'],
+  ['武道馆红夜_2014.3.1','2153800'],
+  ['武道馆黑夜_2014.3.2_','2166494'],
+  ['Sonisphere Festival_2014.7','2811508'],
+  ['Summer Sonic Ⅱ_2014.8','1969936'],
+  ['2014世界巡演_2014.7~11','2347484'],
+  ['2015新春狐狸祭_2015.1','2776414'],
+  ['红黑弥撒_2015.4','4306302'],
+  ['METROCK_2015.5','4566369'],
+  ['巨大天下金属武道会_2015.6','6229265'],
+  ['Summer Sonic Ⅲ_2015.8','3268743'],
+  ['横滨アリーナ_2015.12','6244689'],
+  ['伦敦温布利_2016.4','7295686'],
+  ['NHK特番_2016.4','4357542'],
+  ['NHK特番_2016.4','4584702'],
+  ['东京巨蛋_2016.9','9608930']
+]
 
 function init() {
 
@@ -39,6 +68,7 @@ function init() {
     var element = document.createElement( 'img' );
     element.className = 'element';
     element.src='images/show.png';
+    element.setAttribute('dataTH','9608930');
     //element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
 
     var object = new THREE.CSS3DObject( element );
@@ -52,6 +82,7 @@ function init() {
     var object = new THREE.Object3D();
     object.position.x = ( table[i][2] * 180 ) - 1330;
     object.position.y = - ( table[i][3] * 140 ) + 990;
+    object.position.z = parseInt( Math.random() * 1000 );
 
     targets.table.push( object );
 
@@ -223,3 +254,9 @@ function render() {
   renderer.render( scene, camera );
 
 }
+
+document.getElementById('container').addEventListener('click',function (e) {
+  if(e.target.className === 'element'){
+    window.location.href = 'https://www.bilibili.com/video/av' + e.target.getAttribute('dataTH') ;
+  }
+})

@@ -1,0 +1,1 @@
+document.getElementById('em').setAttribute('flashvars','aid='+ window.location.search.split("=")[1] +'&page=1');

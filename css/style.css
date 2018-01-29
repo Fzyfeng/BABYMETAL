@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  box-sizing: border-box;
 }
 
 body {
@@ -176,4 +177,26 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+#menu{
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  right: 0;
+  width: 50px;
+  transform: translateY(-30%);
+}
+#menu div{
+  width: 6px;
+  height: 45px;
+  margin: 10px auto;
+  cursor: pointer;
+  background: rgba(0,99,172,0.5);
+}
+#menu div:hover{
+  width: 6px;
+  height: 45px;
+  margin: 10px auto;
+  background: rgba(0,99,172,0.7);
 }
